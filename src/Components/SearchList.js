@@ -2,15 +2,15 @@ import React, {Component} from 'react';
 import '../App.css'
 
 class SearchList extends Component {
-  const searchData = this.props.autoSearch;
-  const searchItem = searchData.map((item) =>
-    <li key={item}>
-      {item}
-    </li>
-  )
   render() {
+    const titleData = this.props.title;
+    const listData = titleData.map((data) =>
+      <li key={data}>{data}</li>
+    );
     return(
-      <ul>{searchItem}</ul>
+      <ul>
+        {listData}
+      </ul>
     )
   }
 }

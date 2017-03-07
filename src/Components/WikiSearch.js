@@ -5,9 +5,6 @@ import SearchList from './SearchList'
 class WikiSearch extends Component {
   render() {
     const searchData = this.props.autoSearch;
-    const listData = searchData.map((data) =>
-      <li key={data}>{data}</li>
-    );
     return(
       <div className="search">
         <div className="intro">
@@ -23,8 +20,7 @@ class WikiSearch extends Component {
             onKeyPress={this.props.handleKeyPress} />
           <div className="searchClear">x</div>
           <div className="searchComplete">
-            {/* <ul>{listData}</ul> */}
-            <SearchList searchData={searchData} />
+            <SearchList title={searchData} />
           </div>
         </div>
       </div>
