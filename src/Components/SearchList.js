@@ -5,10 +5,10 @@ class SearchList extends Component {
   render() {
     const titleData = this.props.title;
     const listData = titleData.map((data) =>
-      <li key={data}>{data}</li>
+      <li className="autoResult" key={data}>{data}</li>
     );
     return(
-      <ul>
+      <ul className="autoResults">
         {listData}
       </ul>
     )
