@@ -94,12 +94,16 @@ body{
   background: #DDD;
 }
 
-.searchInput {
+.beforeSearchInput {
   border-bottom: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.searchComplete {
+.showSearchComplete {
   display: block;
+}
+
+.success {
+  color: #fff;
 }
