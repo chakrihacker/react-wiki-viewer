@@ -10,7 +10,8 @@ class App extends Component {
       searchSuggestions: [],
       title: [],
       description: [],
-      links: []
+      links: [],
+      enterPressed: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
@@ -45,20 +46,9 @@ class App extends Component {
 handleEnter(e) {
   let self = this;
   if (e.key === 'Enter') {
-    // console.log(e.target.value);
-    console.log(this.state.search);
-    const url = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&search="
-    fetch(url+e.target.value)
-      .then(function (res) {
-        res.json().then(function (data) {
-          console.log(data);
-          self.setState({
-            title: data[1],
-            description: data[2],
-            links: data[3]
-          })
-        })
-      });
+    self.setState({
+      enterPressed: true
+    })
   }
 }
 
@@ -71,7 +61,8 @@ handleEnter(e) {
           handleKeyPress={this.handleEnter}
           title={this.state.title}
           description={this.state.description}
-          links={this.state.links} />
+          links={this.state.links}
+          enterPressed={this.state.enterPressed}  />
       </div>
     );
   }
